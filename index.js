@@ -29,7 +29,7 @@ app.post("/api/shorturl", function (req, res) {
     urlparser.parse(url).hostname,
     async (err, address) => {
       if (!address) {
-        res.json({ error: "Invalid URL :-(" });
+        res.json({ error: "Invalid URL" });
       } else {
         const urlCount = await urls.countDocuments({});
         const urlDoc = { url, short_url: urlCount };
